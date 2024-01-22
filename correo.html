@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body {
+      text-align: center;
+      font-size: 14px;
+    }
+    .table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .row {
+      display: table-row;
+    }
+    .cell {
+      display: table-cell;
+      padding: 8px;
+      text-align: left;
+      border: 1px solid black; /* Añade bordes blancos */
+    }
+    .cell:first-child,
+    .row:first-child .cell {
+      background-color: black;
+      color: white;
+    }
+    .header-row {
+      background-color: black;
+      color: white;
+    }
+    .id-column {
+      background-color: black;
+      color: white;
+    }
+    .p-3.bg-light.text-dark {
+      background-color: white;
+      color: black;
+    }
+  </style>
+  <title>Correo Electrónico</title>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mt-4 mb-4">Información de la Base de Datos</h2>
+    <div class="table">
+      <div class="row header-row">
+        <div class="cell id-column">ID</div>
+        <div class="cell">Clave de Acceso</div>
+        <div class="cell">Estado</div>
+        <div class="cell">Mensaje</div>
+        <div class="cell">RST ID</div>
+        <div class="cell">CFAC ID</div>
+        <div class="cell">Fecha</div>
+        <div class="cell">Replica</div>
+      </div>
+      {{#rows}}
+        <div class="row">
+          <div class="cell id-column">{{IDLogFacturacionElectronica}}</div>
+          <div class="cell">{{lg_clave_acceso}}</div>
+          <div class="cell">{{lg_estado}}</div>
+          <div class="cell">{{lg_mensaje}}</div>
+          <div class="cell">{{rst_id}}</div>
+          <div class="cell">{{cfac_id}}</div>
+          <div class="cell">{{lg_fecha}}</div>
+          <div class="cell">{{replica}}</div>
+        </div>
+      {{/rows}}
+    </div>
+  </div>
+</body>
+</html>
